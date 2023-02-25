@@ -1,0 +1,35 @@
+#Findings and learnings from yolov5 
+
+DAY 1:
+	-> Yolov5 has five model yolov5s,yolov5m,yolov5l,yolov5n,yolov5x.
+	-> To train a custom dataset the yaml file for the custom dataset should be passed as argument(--data) in train.py to train the custom dataset.
+	-> To detect object in your image you have to pass the weights(--weights) that has been stored in runs/train/exp/weights/(either last.pt or best.pt) which came as a result of your trained custom dataset.
+	-> all the results of train,test,evolve will be stored in runs folder
+	-> As the number of epoch increases the prediction and confusion matrix gets better.
+DAY 2:
+	-> Yolov5 has three hyperparameter files in data/hyps which can be included in train.py as argument(--hyp) for different agumentation(like low,medium,high).
+	-> Yolov5 also has hyperparameter evolution which can be included by passing argument --evolve. It will defaultly run the epochs by learning and evloving the hyperparameters for 300 generation and it will store evloved the hyperparameter which is best ini those times using metrics and create a yaml file for that hyperparameter which then can be used to train the dataset.Evolution can be done for specified generations also (like --evolve 1000). The results of the evolves can be found in runs folder.
+
+DAY 3:
+
+	-> The difference between the evolved and normal hyperparameters are the accuracy in their detection. The accuracy of the evolved one is less when compared to normal one in detection because the comparison of object in evolved is high.
+
+22/3/2022 : 
+
+	->yolov5l runs started for 500 epochs with hyp high at 2:35pm completed at 10:25am on 23/3/2022 at 292 epochs without improvement result stored in runs/train/exp20
+	-> detections stored in runs/detect/exp14
+
+23/3/2022 :
+	 
+	->yolov5m runs started for 500 epochs with hyp high at 10:28am completed at 09:00am on 23/3/2022 at 311 epochs without improvement result stored in runs/train/exp21
+
+	-> ASG000f0bf.jpg m not prdicting and l is predicting wrong
+
+	-> Stopping training early as no improvement observed in last 100 epochs. Best results observed at epoch 210, best model saved as best.pt.
+To update EarlyStopping(patience=100) pass a new patience value, i.e. `python train.py --patience 300` or use `--patience 0` to disable EarlyStopping.
+
+25/3/2022 : 
+
+	-> To imporve data classification and to imporve confusion matrix for prediction we downloaded the images to overcome the imabalance of the dataset using the IDT(Image dataset Tool). We have downloaded 500 images each for 39 classes.
+
+	->the next step is to annote the downloaded data and find the bounding boxes.
