@@ -1,0 +1,11 @@
+# train and val datasets (image directory or *.txt file with image paths)
+train: /home/bhuvanaj/yolov5/yolov5/data/train_1.txt 
+val: /home/bhuvanaj/yolov5/yolov5/data/val_1.txt
+test: /home/bhuvanaj/yolov5/yolov5/data/test_1.txt
+
+# number of classes
+nc: 46
+
+# class names
+names: ['Impala', 'Wildebeest', 'Hippopotamus', 'Warthog', 'GuineaFowl', 'Zebra', 'Elephant', 'Hartebeest', 'Buffalo', 'GazelleGrants', 'Porcupine', 'KoriBustard', 'Giraffe', 'Reedbuck', 'Mongoose', 'Human', 'Baboon', 'OtherBird', 'GazelleThomsons', 'Topi', 'Eland', 'Lion', 'Oxpecker', 'CattleEgret', 'HyenaSpotted', 'Serval', 'Stork', 'SuperbStarling', 'BuffCrestedBustard', 'DikDik', 'Bushbuck', 'Cheetah', 'SecretaryBird', 'Jackal', 'Aardvark', 'WattledStarling', 'Rodent',  'Ostrich', 'Leopard', 'GreyBackedFiscal', 'Aardwolf', 'Rhinoceros', 'Hare', 'Waterbuck', 'WhiteHeadBuffaloWeaver', 
+  'VervetMonkey']
